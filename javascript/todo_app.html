@@ -12,18 +12,28 @@
 </head>
 
 <body>
-    <form action="">
+    <form onsubmit="handelTodo(event)">
         <h2>Create Todo</h2>
         <input type="text" name="todo" id="todo">
-        <button>create</button>
+        <button type="submit">create</button>
     </form>
+
     <!-- todo list -->
     <div id="TodoData"></div>
 
-
     <!-- javascript -->
     <script>
-        
+        function handelTodo(event) {
+            event.preventDefault();
+            const Todo = document.getElementById("todo").value; // get todo data
+            const showTodo = document.getElementById("TodoData"); 
+
+            let _ToDo = [Todo];
+
+            _ToDo = [Todo,...Todo]
+
+            showTodo.innerHTML = _ToDo;
+        }
     </script>
 </body>
 
