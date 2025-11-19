@@ -19,22 +19,31 @@
         gap: 8px;
     }
 
-    .return-com {
+    #result {
+        margin-top: 60px;
         margin-bottom: 60px;
     }
-    main{
+
+    main {
         border: 2px solid black;
         padding: 10px;
         width: 400px;
     }
-    .opra-main{
+
+    .opra-main {
         margin-top: 20px;
     }
 </style>
 
 <body>
     <main>
-        <div class="return-com"></div>
+        <!-- result -->
+        <div>
+            <p id="FirstNum"></p>
+            <p id="LastNum"></p>
+            <p id="_method"></p>
+        </div>
+        <div id="result"></div>
         <div class="btn-holder">
             <button class="btn" id="0">0</button>
             <button class="btn" id="1">1</button>
@@ -53,11 +62,262 @@
             <button class="btn-opra" id="p">+</button>
             <button class="btn-opra" id="m">-</button>
         </div>
+        <div>
+            <button class="opra-main" id="calculate">=</button>
+        </div>
     </main>
 
 
     <!-- javascript -->
     <script>
+        // set variable
+        let firstNum = "non";
+        let lastNum = "non";
+
+        let _Method = " ";
+
+        // check the number
+        function CheckTheNumber() {
+            document.getElementById("0").onclick = function _0() {
+
+                if (typeof firstNum === 'number') {
+
+                    lastNum = 0;
+                    console.log("this is last number!", lastNum);
+                    document.getElementById("LastNum").innerText = lastNum;
+                } else {
+                    firstNum = 0;
+                    console.log("this is first number!", firstNum);
+                    document.getElementById("FirstNum").innerText = firstNum;
+                }
+
+            }
+            document.getElementById("1").onclick = function _1() {
+
+                if (typeof firstNum === 'number') {
+
+                    lastNum = 1;
+                    console.log("this is last number!", lastNum);
+                    document.getElementById("LastNum").innerText = lastNum;
+
+                } else {
+                    firstNum = 1;
+                    console.log("this is first number!", firstNum);
+                    document.getElementById("FirstNum").innerText = firstNum;
+
+                }
+
+            }
+            document.getElementById("2").onclick = function _2() {
+
+                if (typeof firstNum === 'number') {
+
+                    lastNum = 2;
+                    console.log("this is last number!", lastNum);
+                    document.getElementById("LastNum").innerText = lastNum;
+
+                } else {
+                    firstNum = 2;
+                    console.log("this is first number!", firstNum);
+                    document.getElementById("FirstNum").innerText = firstNum;
+
+                }
+
+            }
+            document.getElementById("3").onclick = function _3() {
+
+                if (typeof firstNum === 'number') {
+
+                    lastNum = 3;
+                    console.log("this is last number!", lastNum);
+                    document.getElementById("LastNum").innerText = lastNum;
+
+
+                } else {
+                    firstNum = 3;
+                    console.log("this is first number!", firstNum);
+                    document.getElementById("FirstNum").innerText = firstNum;
+
+                }
+
+            }
+            document.getElementById("4").onclick = function _4() {
+
+                if (typeof firstNum === 'number') {
+
+                    lastNum = 4;
+                    console.log("this is last number!", lastNum);
+                    document.getElementById("LastNum").innerText = lastNum;
+
+                } else {
+                    firstNum = 4;
+                    console.log("this is first number!", firstNum);
+                    document.getElementById("FirstNum").innerText = firstNum;
+
+                }
+
+            }
+            document.getElementById("5").onclick = function _5() {
+
+                if (typeof firstNum === 'number') {
+
+                    lastNum = 5;
+                    console.log("this is last number!", lastNum);
+                    document.getElementById("LastNum").innerText = lastNum;
+
+                } else {
+                    firstNum = 5;
+                    console.log("this is first number!", firstNum);
+                    document.getElementById("FirstNum").innerText = firstNum;
+
+                }
+
+            }
+            document.getElementById("6").onclick = function _6() {
+
+                if (typeof firstNum === 'number') {
+
+                    lastNum = 6;
+                    console.log("this is last number!", lastNum);
+                    document.getElementById("LastNum").innerText = lastNum;
+
+                } else {
+                    firstNum = 6;
+                    console.log("this is first number!", firstNum);
+                    document.getElementById("FirstNum").innerText = firstNum;
+
+                }
+
+            }
+            document.getElementById("7").onclick = function _7() {
+
+                if (typeof firstNum === 'number') {
+
+                    lastNum = 7;
+                    console.log("this is last number!", lastNum);
+                    document.getElementById("LastNum").innerText = lastNum;
+
+                } else {
+                    firstNum = 7;
+                    console.log("this is first number!", firstNum);
+                    document.getElementById("FirstNum").innerText = firstNum;
+
+                }
+
+            }
+            document.getElementById("8").onclick = function _8() {
+
+                if (typeof firstNum === 'number') {
+
+                    lastNum = 8;
+                    console.log("this is last number!", lastNum);
+                    document.getElementById("LastNum").innerText = lastNum;
+
+                } else {
+                    firstNum = 8;
+                    console.log("this is first number!", firstNum);
+                    document.getElementById("FirstNum").innerText = firstNum;
+
+                }
+
+            }
+            document.getElementById("9").onclick = function _9() {
+
+                if (typeof firstNum === 'number') {
+
+                    lastNum = 9;
+                    console.log("this is last number!", lastNum);
+                    document.getElementById("LastNum").innerText = lastNum;
+
+                } else {
+                    firstNum = 9;
+                    console.log("this is first number!", firstNum);
+                    document.getElementById("FirstNum").innerText = firstNum;
+
+                }
+
+            }
+        } CheckTheNumber()
+
+        // check the method
+        function CheckMethodOP() {
+            // sum +
+            document.getElementById("p").onclick = function () {
+                _Method = "+"
+                console.log("method is +");
+                document.getElementById("_method").innerText = _Method;
+
+            }
+            // difference -
+            document.getElementById("m").onclick = function () {
+                _Method = "-"
+                console.log("method is -");
+                document.getElementById("_method").innerText = _Method;
+
+            }
+            // product ×
+            document.getElementById("x").onclick = function () {
+                _Method = "x"
+                console.log("method is *");
+                document.getElementById("_method").innerText = _Method;
+
+            }
+            // quotient ÷
+            document.getElementById("s").onclick = function () {
+                _Method = "/"
+                console.log("method is /");
+                document.getElementById("_method").innerText = _Method;
+
+            }
+        } CheckMethodOP()
+
+        // calculate the math
+        document.getElementById("calculate").onclick = function calculateTheMath() {
+            if (_Method === "+") {
+                let sum = firstNum + lastNum;
+                console.log(sum);
+
+                const resultDiv = document.getElementById("result");
+
+                resultDiv.innerHTML = `
+                <p>${firstNum} + ${lastNum} = ${sum} </p>
+
+                `;
+            } else if (_Method === "-") {
+                let difference = firstNum - lastNum;
+                console.log(difference);
+
+                const resultDiv = document.getElementById("result");
+
+                resultDiv.innerHTML = `
+                <p>${firstNum} - ${lastNum} = ${difference} </p>
+
+                `;
+            } else if (_Method === "x") {
+                let product = firstNum * lastNum;
+                console.log(product);
+
+                const resultDiv = document.getElementById("result");
+
+                resultDiv.innerHTML = `
+                <p>${firstNum} * ${lastNum} = ${product} </p>
+
+                `;
+            } else if (_Method === "/") {
+                let quotient = firstNum / lastNum;
+                console.log(quotient);
+
+                const resultDiv = document.getElementById("result");
+
+                resultDiv.innerHTML = `
+                <p>${firstNum} / ${lastNum} = ${quotient} </p>
+
+                `;
+            }
+
+        }
+
+
 
     </script>
 </body>
