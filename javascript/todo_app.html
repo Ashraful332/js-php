@@ -25,14 +25,26 @@
     <script>
         function handelTodo(event) {
             event.preventDefault();
-            const Todo = document.getElementById("todo").value; // get todo data
-            const showTodo = document.getElementById("TodoData"); 
 
-            let _ToDo = [Todo];
+            const input = document.getElementById("todo");
+            const todoText = input.value.trim();
 
-            _ToDo = [Todo,...Todo]
+            if (todoText == "") {
+                alert("Please enter a todo!");
+                return;
+            }
 
-            showTodo.innerHTML = _ToDo;
+            const showTodo = document.getElementById("TodoData");
+
+            // create todo item
+            const todoItem = document.createElement("p");
+            todoItem.innerText = todoText;
+
+            // add to UI
+            showTodo.appendChild(todoItem);
+
+            // clear input
+            input.value = "";
         }
     </script>
 </body>

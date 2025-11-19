@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple To-Do App</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to your CSS file -->
+</head>
+
+<body>
+    <div class="todo-container">
+        <h1>My To-Do List</h1>
+        <div class="input-area">
+            <input type="text" id="taskInput" placeholder="Add a new task...">
+            <button id="addTaskBtn">Add Task</button>
+        </div>
+        <ul id="taskList">
+            <!-- To-Do items will be added here by JavaScript -->
+        </ul>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const taskInput = document.getElementById('taskInput');
+            const addTaskBtn = document.getElementById('addTaskBtn');
+            const taskList = document.getElementById('taskList');
+
+            addTaskBtn.addEventListener('click', addTask);
+
+            function addTask() {
+                const taskText = taskInput.value.trim();
+
+                if (taskText !== '') {
+                    const listItem = document.createElement('li');
+                    listItem.innerHTML = `
+                        <span>${taskText}</span>
+                        <button class="delete-btn">Delete</button>
+                    `;
+                    taskList.appendChild(listItem);
+                    taskInput.value = '';
+
+                    // Add event listener for deleting the task
+                    const deleteBtn = listItem.querySelector('.delete-btn');
+                    deleteBtn.addEventListener('click', () => {
+                        taskList.removeChild(listItem);
+                    });
+
+                    // Add event listener for marking as complete (optional)
+                    listItem.querySelector('span').addEventListener('click', () => {
+                        listItem.classList.toggle('completed');
+                    });
+                }
+            }
+        });
+    </script> <!-- Link to your JavaScript file -->
+</body>
+
+</html>
